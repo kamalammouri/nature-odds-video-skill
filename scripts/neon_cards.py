@@ -1,4 +1,4 @@
-"""Oxygen Odds neon cards for the "html" shots of shots.json, written where ancient-humans-video's build_slideshow.render
+"""Nature Odds neon cards for the "html" shots of shots.json, written where ancient-humans-video's build_slideshow.render
 and hf_build.py look for them: <flow_dir>/html/H0001.png (shot i). python neon_cards.py shots.json flow/<video> [--selftest]
 Specs (make_shots.py: H({...})):
   {"type": "choice", "a": "Hold still", "b": "Swim for the boat", "c": "Face it", "level": "LEVEL 2"}

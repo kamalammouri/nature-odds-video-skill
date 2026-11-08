@@ -1,4 +1,4 @@
-"""Oxygen Odds game HUD layer for a HyperFrames project built by ancient-humans-video/scripts/hf_build.py.
+"""Nature Odds game HUD layer for a HyperFrames project built by ancient-humans-video/scripts/hf_build.py.
 python hud.py <project_dir> hud.json          (run after hf_build.py; idempotent)
 hud.json: {"gauge": "O2" (or "ENERGY", "AIR"… for Body Swap), "keys":   [{"t": 0, "level": "LEVEL 1 · SURFACE", "o2": 100, "odds": 96, "depth": 0}, ...],
            "events": [{"t": 512.3, "text": "GAME OVER", "dur": 2.0, "color": "#ff2e4d"}, ...]}

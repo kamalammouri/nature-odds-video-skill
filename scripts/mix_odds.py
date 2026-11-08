@@ -1,6 +1,6 @@
-"""Oxygen Odds sound pass (references/identity.md §6) on a rendered video: voice compressed, a low bubble/regulator bed ducked
+"""Nature Odds sound pass (references/identity.md §6) on a rendered video: voice compressed, a low habitat bed (bubbles, night savanna, jungle, wind) ducked
 under the voice, synthesized HUD beeps, sonar pings and choice locks placed from hud.json, master at -14 LUFS / -1.5 dBTP.
-python mix_oxygen.py render.mp4 hud.json bed.mp3 out.mp4 [--sonar 8.7,38.0] [--bed-vol 0.22] [--fx-vol 0.55]
+python mix_odds.py render.mp4 hud.json bed.mp3 out.mp4 [--sonar 8.7,38.0] [--bed-vol 0.22] [--fx-vol 0.55]
 Beep on every hud.json key after the first (and at 0.15 s), lock on every event whose text starts with "CHOICE", alarm on every
 key whose o2 drops under 30, ping at each --sonar time (creature reveals). Measured on the 8 Nov 2026 demo: -14.1 LUFS, -1.4 dBTP."""
 import json, pathlib, re, subprocess, sys, tempfile

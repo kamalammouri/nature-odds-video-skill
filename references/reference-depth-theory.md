@@ -1,14 +1,14 @@
 # Étude de marché : Depth Theory (mesurée le 8 novembre 2026, 7 vidéos, toutes celles de la chaîne)
 
-**Ce fichier n'est pas un modèle à suivre.** Il dit pourquoi la niche marche ; la forme d'Oxygen Odds est dans `identity.md`. Les titres, la miniature, les tournures et l'outro décrits ici sont **à eux** : `originality.py` les bloque.
+**Ce fichier n'est pas un modèle à suivre.** Il dit pourquoi la niche marche ; la forme d'Nature Odds est dans `identity.md`. Les titres, la miniature, les tournures et l'outro décrits ici sont **à eux** : `originality.py` les bloque.
 
-| Principe qui marche ici (on le garde) | Notre version Oxygen Odds |
+| Principe qui marche ici (on le garde) | Notre version Nature Odds |
 |---|---|
 | Le spectateur est mis en danger (« you ») | il **joue** : choix A/B/C, jauge d'O2, score |
 | Un animal connu + un record + une vraie rencontre | idem, mais chaque fait tranche un choix du jeu |
 | Échelles concrètes (bus, éléphants, ta main) | silhouette humaine étalon et « head to toe » |
 | Débit soutenu, presque sans pause, plans de 3,5 à 4 s | idem (norme de la niche, pas une signature) |
-| Pas de musique, effets sonores denses | bips d'ordinateur de plongée, sonar, détendeur |
+| Pas de musique, effets sonores denses | bips du HUD, sonar ou scanner, ambiance du milieu |
 | Sources et crédits dans la description | idem + mention IA et « score de jeu » |
 
 À **ne jamais reprendre** : les gabarits de titres §2, la miniature §6 (gravure noire, plongeur à lampe, flèche rouge, « IT … YOU.. »), l'ouverture « Picture this », « What would you actually do? », « The real danger », l'outro, la palette bleu nuit vectorielle et les cartes à grille de §5.

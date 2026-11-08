@@ -15,7 +15,7 @@ YouTube démonétise le contenu produit en masse ou répétitif, **quelle que so
 - [ ] `originality.py script.md --ref <transcriptions de la chaîne étudiée> --title "<titre>" --ref-titles channel.json` : 0 hit (ni phrase, ni tournure signature, ni titre trop proche).
 
 ## 3. Usurpation d'identité et imitation
-- [ ] Nom, logo, bannière, miniature, police et palette propres à Oxygen Odds (`identity.md` §5). Jamais le nom, le style de miniature (gravure noire, flèche rouge, « IT … YOU.. ») ni les gabarits de titres d'une autre chaîne.
+- [ ] Nom, logo, bannière, miniature, police et palette propres à Nature Odds (`identity.md` §5). Jamais le nom, le style de miniature (gravure noire, flèche rouge, « IT … YOU.. ») ni les gabarits de titres d'une autre chaîne.
 - [ ] Les questions génériques (« Can you survive… ») sont un usage commun ; la signature de la chaîne est le HUD de jeu et la mécanique, pas la question.
 
 ## 4. Contenu altéré ou synthétique (case « Altered or synthetic content » dans Studio)

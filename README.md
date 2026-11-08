@@ -1,9 +1,9 @@
-# oxygen-odds-video — Claude Code skill
+# nature-odds-video — Claude Code skill
 
-A [Claude Code](https://claude.com/claude-code) skill for **Oxygen Odds**, an ocean survival-game channel:
-every video is a run. You dive with 100 % oxygen, a neon HUD shows your gauge, depth and survival odds,
+A [Claude Code](https://claude.com/claude-code) skill for **Nature Odds**, an animal survival-game channel:
+every video is a run. You enter an animal's world (land, sea or sky), a neon HUD shows your gauge (oxygen, stamina, warmth…) and survival odds,
 you choose A, B or C at each of five levels, and every choice is settled by a sourced fact about the
-animal (sperm whale, tiger shark, giant squid, the Mariana Trench…). It ends on GAME OVER or YOU SURVIVED,
+animal (grizzly, lion, cobra, tiger shark, sperm whale, the Mariana Trench…). It ends on GAME OVER or YOU SURVIVED,
 then a short debrief on what actually keeps people safe. The docs are in French; the videos are in
 American English.
 
@@ -17,7 +17,7 @@ checklist (reused content, AI disclosure, licenses, safety, metadata) gates publ
 The production pipeline comes from
 [ancient-humans-video-skill](https://github.com/kamalammouri/ancient-humans-video-skill): ElevenLabs voice,
 Google Flow images through Playwright, the HyperFrames edit, Real SFX, YouTube analysis tools and the
-agent briefs are called by path, never copied. Install both. The `oxygen-neon` image style lives in that
+agent briefs are called by path, never copied. Install both. The `nature-neon` image style lives in that
 repo's `scripts/styles.json`.
 
 ## Layout
@@ -28,9 +28,9 @@ repo's `scripts/styles.json`.
 - `references/agents.md` — per-agent changes and which model runs each one (incl. the Originality checker).
 - `references/youtube-compliance.md` — pre-publication checklist with its sources.
 - `references/reference-depth-theory.md` — market study of the niche: principles kept, forms never reused.
-- `scripts/hud.py` — game HUD layer (oxygen bar, odds, depth, level, GAME OVER banners) for a HyperFrames
+- `scripts/hud.py` — game HUD layer (habitat gauge, odds, depth or distance, level, GAME OVER banners) for a HyperFrames
   project; `--selftest`.
-- `scripts/thumb_oxygen.py` — thumbnail HUD (odds readout + oxygen bar); `--selftest`.
+- `scripts/thumb_odds.py` — thumbnail HUD (odds readout + habitat gauge); `--selftest`.
 - `scripts/originality.py` — clone guard: signature phrases, shared 6/10-word runs, title similarity; `--selftest`.
 - `scripts/meta_digest.py` — compact digest of a channel's yt-dlp `.info.json` files.
 
@@ -38,13 +38,13 @@ repo's `scripts/styles.json`.
 
 ```bash
 git clone https://github.com/kamalammouri/ancient-humans-video-skill ~/.claude/skills/ancient-humans-video
-git clone https://github.com/kamalammouri/oxygen-odds-video-skill ~/.claude/skills/oxygen-odds-video
+git clone https://github.com/kamalammouri/nature-odds-video-skill ~/.claude/skills/nature-odds-video
 ```
 
 Optional, to break reference videos down: `git clone https://github.com/JuneYaooo/rea-video ~/.local/src/rea-video`
 then `python -m pip install -e ~/.local/src/rea-video` (needs ffmpeg). Run it with `PYTHONUTF8=1` on Windows.
 
-Then ask Claude Code something like "make an Oxygen Odds run about the tiger shark".
+Then ask Claude Code something like "make an Nature Odds run about the tiger shark".
 
 ## Use responsibly
 

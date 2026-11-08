@@ -1,24 +1,25 @@
-# Oxygen Odds — bible de la chaîne (@OxygenOdds)
+# Nature Odds — bible de la chaîne (@NatureOdds)
 
-Promesse : **chaque vidéo est une partie**. Tu plonges avec 100 % d'oxygène, l'océan fixe tes chances. Le spectateur joue : il choisit à chaque niveau, il voit sa jauge baisser, il apprend la vraie biologie parce que chaque choix est tranché par un fait sourcé. Tout ce qui suit est propre à la chaîne ; la chaîne étudiée (`reference-depth-theory.md`) n'apporte que des principes, jamais une forme.
+Promesse : **chaque vidéo est une partie**. Tu entres dans le monde d'un animal (mer, terre ou ciel) avec une jauge pleine, la nature fixe tes chances. Le spectateur joue : il choisit à chaque niveau, il voit sa jauge baisser, il apprend la vraie biologie parce que chaque choix est tranché par un fait sourcé. Tout ce qui suit est propre à la chaîne ; la chaîne étudiée (`reference-depth-theory.md`) n'apporte que des principes, jamais une forme.
 
 ## 1. Le joueur et le narrateur
-- **Le joueur = « you »**, au présent, deuxième personne : petit plongeur en combinaison étanche **orange**, lampe frontale cyan, jauge au poignet.
-- **Le narrateur = ton ordinateur de plongée** : calme, sec, précis, un brin pince-sans-rire. Il annonce les valeurs (« Oxygen: eighty-two percent. Something large just changed direction. »), puis raconte. Pas de cri, pas d'emphase de bande-annonce.
-- Phrase signature de la chaîne : **« Check your oxygen. »** (ouverture de chaque partie) et **« Drop your odds in the comments. »** (fin).
+- **Le joueur = « you »**, au présent, deuxième personne : petit explorateur en tenue **orange** (combinaison étanche sous l'eau, veste sur terre, combinaison de vol en altitude), lampe frontale cyan, ordinateur de survie au poignet.
+- **Le narrateur = ton ordinateur de survie (au poignet)** : calme, sec, précis, un brin pince-sans-rire. Il annonce les valeurs (« Stamina: eighty-two percent. Something large just changed direction. »), puis raconte. Pas de cri, pas d'emphase de bande-annonce.
+- **Jauge selon le milieu** (`hud.json` `gauge`, `thumb_odds.py --gauge`) : sous l'eau **O2** ; sur terre **STAMINA** ; froid et banquise **WARMTH** ; nuit et grottes **BATTERY** (lampe) ; en altitude **AIR** ; en Body Swap, ce que l'animal risque de perdre (**ENERGY**).
+- Phrase signature de la chaîne : **« Check your odds. »** (ouverture de chaque partie) et **« Drop your odds in the comments. »** (fin).
 
 ## 2. Quatre formats en rotation (jamais deux fois de suite le même)
 | Format | Titre (gabarit à nous) | Niveaux | Mécanique |
 |---|---|---|---|
 | **A. 60 Seconds** | `Can You Survive 60 Seconds Next To A [Animal]?` | 5 niveaux de proximité (100 m → contact) | compte à rebours à l'écran |
-| **B. Descent** | `Can You Reach The Bottom Of [Lieu]?` / `Could You Survive A Dive To [N] Meters?` | 5 niveaux de profondeur, une créature par zone | jauge de profondeur et pression |
+| **B. Expedition** | `Can You Cross [Lieu] Alive?` / `Could You Survive A Dive To [N] Meters?` | 5 zones du lieu (savane, jungle, banquise, profondeurs…), une créature par zone | jauge de distance ou de profondeur |
 | **C. Body Swap** | `You Wake Up As A [Animal]. Can You Survive?` | 5 épreuves de la vie de l'animal | tu joues l'animal : ses sens deviennent ton HUD |
 | **D. Real Run** | `Could You Have Survived [Rencontre réelle]?` | la chronologie d'un incident documenté | rejouer les décisions, puis ce qui s'est vraiment passé |
 
 **Chaque épisode a une mécanique neuve** ajoutée au HUD : jauge de bruit (sonar du cachalot), champ électrique (requin), température (ours polaire), courant, deuxième prédateur… Elle est notée dans `brief.json` (`new_mechanic`) et l'Originality checker refuse un épisode sans elle.
 
 ## 3. Structure d'une partie (≈ 12 min, 1 900 à 2 100 mots)
-1. **GAME START** (0:00–0:25) : le HUD s'allume, « Check your oxygen. », le lieu, le but (« survive sixty seconds »), la première menace devinée avant d'être vue.
+1. **GAME START** (0:00–0:25) : le HUD s'allume, « Check your odds. », le lieu, le but (« survive sixty seconds »), la première menace devinée avant d'être vue.
 2. **Niveaux 1 à 5** (1,5 à 2,5 min chacun) : le décor → une capacité de l'animal (un record sourcé, converti en échelle humaine) → **CHOIX A / B / C** (carte à l'écran, 2 s de silence voulu pour que le spectateur choisisse) → la conséquence, tranchée par un fait → mise à jour du HUD (O2, SURVIVAL %).
 3. **Retournement** vers 55 % : la règle change (fuite d'air, courant, second prédateur, nuit).
 4. **Fin** : GAME OVER ou YOU SURVIVED, décidé par les faits, puis le score.
@@ -40,24 +41,24 @@ Les pourcentages de survie sont un **score de jeu** expliqué par les faits cit�
 - Interdits (contrôlés par `$DT/scripts/originality.py`) : les tournures de la chaîne étudiée et toute phrase reprise de nos propres scripts précédents (> 10 mots d'affilée).
 
 ## 5. Identité visuelle
-- Images Flow au style **`oxygen-neon`** (`$AH/scripts/styles.json`) : noir absolu, créatures en contours lumineux cyan / bleu électrique / magenta, particules, le plongeur orange minuscule.
+- Images Flow au style **`nature-neon`** (`$AH/scripts/styles.json`) : noir absolu, créatures en contours lumineux cyan / bleu électrique / magenta sur fond de nuit (eau, savane, jungle, glace selon l'épisode), particules, l'explorateur orange minuscule.
 - **HUD permanent** en haut à gauche (`$DT/scripts/hud.py`) : niveau, barre d'O2 (rouge sous 30 %), SURVIVAL %, profondeur ; bandeaux GAME OVER / YOU SURVIVED / CHOICE LOCKED.
 - **Cartes `html`** : carte-choix A/B/C dans des cadres néon ; carte-niveau « LEVEL 3 · TWILIGHT ZONE · 600 M » ; chiffre-record avec silhouette humaine à l'échelle.
-- Couleurs : noir `#000000`, cyan `#00e5ff`, magenta `#ff2fd6`, rouge alerte `#ff2e4d`, orange plongeur `#ff8a1f`. Polices : JetBrains Mono (HUD), League Gothic (titres).
+- Couleurs : noir `#000000`, cyan `#00e5ff`, magenta `#ff2fd6`, rouge alerte `#ff2e4d`, orange explorateur `#ff8a1f`. Polices : JetBrains Mono (HUD), League Gothic (titres).
 - Mouvement : lents zooms dans le noir, flashs de lumière sur les révélations, léger tremblement d'écran à chaque alerte.
-- **Miniature** (`$DT/scripts/thumb_oxygen.py`) : la créature néon énorme à droite, le plongeur orange en bas à gauche, en haut à gauche le score (« 3% SURVIVAL », « 0:12 LEFT », « 1 IN 40 », « GAME OVER? ») et la barre d'O2 presque vide.
+- **Miniature** (`$DT/scripts/thumb_odds.py`) : la créature néon énorme à droite, l'explorateur orange en bas à gauche, en haut à gauche le score (« 3% SURVIVAL », « 0:12 LEFT », « 1 IN 40 », « GAME OVER? ») et la barre d'O2 presque vide.
 
 ## 6. Son
 - Pas de musique dramatique : un **lit de détendeur** (respiration lente, bulles) très bas, et une pulsation synthé grave seulement dans le niveau 5.
 - Signature sonore : bip de l'ordinateur à chaque mise à jour du HUD, ping de sonar à chaque révélation de créature, alarme douce sous 30 % d'O2, « lock » sur chaque choix. Cible ≈ 8 effets par minute, jamais par-dessus une phrase.
 
 ## 7. Description YouTube (gabarit à nous)
-1. La partie en une phrase (« You have 60 seconds and 100% oxygen next to a sperm whale. Choose well. »), puis 2 records sourcés.
+1. La partie en une phrase (« You have 60 seconds and full stamina next to a grizzly. Choose well. »), puis 2 records sourcés.
 2. « Survival odds are a game score built from the facts cited in the video, not a scientific probability. »
 3. Chapitres `0:00 Game start` / `1:40 Level 1 — …` / … / `11:10 Debrief: what actually keeps you alive`.
 4. « Drop your odds in the comments: did you survive? »
 5. `Sources:` (URL) ; `Visuals:` illustrations générées avec assistance IA (Google Flow) + photos/archives créditées avec licence ; `Voice:` voix de synthèse (ElevenLabs).
-6. 3 hashtags (#OxygenOdds #ocean #survival) ; tags ≤ 500 caractères proposés par le seo-metadata-editor.
+6. 3 hashtags (#NatureOdds #animals #survival) ; tags ≤ 500 caractères proposés par le seo-metadata-editor.
 
 ## 8. Shorts
 « One Choice » : 30 à 45 s verticales, un seul niveau, la carte A/B/C, coupure avant la réponse (« answer in the comments, the full run is on the channel »).
