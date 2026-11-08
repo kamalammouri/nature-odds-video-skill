@@ -18,7 +18,8 @@ Chaque vidéo est **une partie** de 10 à 15 min en anglais (public US) : tu plo
 - `references/agents.md` — ce qui change dans chaque brief d'agent, et le modèle de chaque agent.
 - `references/youtube-compliance.md` — la liste de contrôle des règles YouTube, avec ses sources.
 - `references/reference-depth-theory.md` — l'étude de marché (principes à garder, formes à ne jamais reprendre).
-- `scripts/hud.py` (le HUD de jeu dans HyperFrames), `scripts/thumb_oxygen.py` (la miniature), `scripts/originality.py` (le contrôle anti-clone), `scripts/meta_digest.py` (le résumé des métadonnées d'une chaîne).
+- `scripts/hud.py` (le HUD de jeu dans HyperFrames), `scripts/neon_cards.py` (cartes néon), `scripts/mix_oxygen.py` (le son de la chaîne), `scripts/thumb_oxygen.py` (la miniature), `scripts/originality.py` (le contrôle anti-clone), `scripts/meta_digest.py` (le résumé des métadonnées d'une chaîne). Chaque script a un `--selftest`.
+- Démo complète de référence (8 novembre 2026, 64 s, tous les fichiers de travail) : `Desktop/Nouveau dossier (3)/oxygen-odds/demo-tiger/`.
 - Style d'image `oxygen-neon` dans `$AH/scripts/styles.json`.
 
 ## Économie de tokens (règles de lecture)
@@ -33,10 +34,14 @@ Chaque vidéo est **une partie** de 10 à 15 min en anglais (public US) : tu plo
 2. **Faits** : **Fact-checker**, 5 à 10 sources nommées, 20 à 50 chiffres, une source par bonne réponse de choix, debrief de sécurité de source officielle.
 3. **Script et HUD** : **Script writer** → `script.md` + `hud.json` ; puis en parallèle **Fact-checker**, **Script critic** et **Originality checker** ; `python $AH/scripts/yt/script_metrics.py script.md --minutes 12` dans les fourchettes de `identity.md` §4.
 4. **Shot list** : **Image director** copie `$AH/scripts/make_shots.py`, familles de `agents.md` (Visual director) ; `python $AH/scripts/prompts.py shots.json --style oxygen-neon --flow-per-min 6` ; **Visual director**.
-5. **Voix** : `python $AH/scripts/tts.py shots.json --engine eleven --voice Brian --gap 0.3`, test `--only 1,2,3` ; **Audio director** ; recaler les `t` de `hud.json` sur `timing.json`.
-6. **Images** : Flow par Playwright (`$AH/references/flow-automation.md`, section par section) ; cartes-choix, cartes-niveaux et records en `html` (jamais Flow) ; archives réelles par `$AH/scripts/openverse.py`, légendées et créditées ; **Image QC** par planche.
+5. **Voix** : `python $AH/scripts/tts.py shots.json --engine eleven --voice Brian --gap 0.3 --speed 0.9` (sans `--speed`, Brian sort à 190 mots/min, mesuré sur la démo du 8 novembre 2026 ; cible 160 à 172), test `--only 1,2,3` ; **Audio director** ; recaler les `t` de `hud.json` sur `timing.json` (`starts`).
+6. **Images** :
+   - **Flow (interface refaite en novembre 2026)** : chaque projet passe par un agent ; `qbatch.mjs` ne trouve plus ses boutons, et l'envoi automatisé déclenche « activité inhabituelle » (anti-robot : ne jamais le contourner). Procédure qui marche : écrire tous les prompts dans `flow_prompts_a_coller.txt` ; **l'utilisateur** les colle dans Flow (projet réglé en 16:9, x1) ; puis `FLOW_TAB=last node $AH/scripts/flow/harvest.mjs flow/raw` télécharge ses images, `python $AH/scripts/flow/harvest_sheet.py flow/raw` fait la planche, on associe chaque H### à son plan par l'image, et on copie en `flow/<video>/F###.png`.
+   - Cartes-choix, cartes-niveaux, records et écran de fin : `python $DT/scripts/neon_cards.py shots.json flow/<video>` (jamais Flow).
+   - Archives réelles par `$AH/scripts/openverse.py`, légendées et créditées.
+   - **Image QC** par planche (sur la démo, l'image des pores montrait un poisson tacheté et non un requin-tigre : c'est le défaut type à attraper).
 7. **Montage** : `python $AH/scripts/hf_build.py shots.json voice.wav timing.json hf --flow flow/<video> --no-captions --accent "#00e5ff"`, puis `python $DT/scripts/hud.py hf hud.json`, puis `npx hyperframes check hf --json` (ok) et le rendu de `$AH/SKILL.md` étape 7 du Workflow.
-8. **Son** : commandes de `$AH/SKILL.md` §5, cibles `identity.md` §6 (lit de détendeur, bips, sonar, ~8 effets/min, pas de musique dramatique), −14 LUFS.
+8. **Son** : `python $AH/scripts/openverse.py "scuba bubbles" --out audio/sfx --n 2` (fond CC0), puis `python $DT/scripts/mix_oxygen.py hf/renders/<rendu>.mp4 hud.json audio/sfx/<bulles>.mp3 out.mp4 --sonar <temps des révélations>` : voix compressée, fond baissé sous la voix, bips du HUD, sonar, « lock » des choix et alarme synthétisés, −14 LUFS (mesuré −14,1 LUFS, −1,4 dBTP sur la démo). Real SFX (`$AH/SKILL.md` §5) seulement pour des bruitages de bibliothèque en plus.
 9. **Miniature** : image Flow au gabarit `thumbnail` du style `oxygen-neon`, puis `python $DT/scripts/thumb_oxygen.py scene.png thumbnail.jpg "3% SURVIVAL" --o2=0.07 --level="LEVEL 5 · ABYSS"`.
 10. **Publication** : **packaging-strategist** (titre, texte de miniature), **seo-metadata-editor** (description `identity.md` §7), **Originality checker** sur le titre et la description, puis **Publication checker** avec `youtube-compliance.md`.
 11. **Short et posts** : Short « One Choice » (`identity.md` §8) avec la commande de recadrage de `$AH/SKILL.md` étape 10 ; posts par le Community manager.

@@ -28,7 +28,7 @@ Les pourcentages de survie sont un **score de jeu** expliqué par les faits cit�
 
 ## 3 bis. Fichiers d'un épisode
 - `brief.json` : `{"format": "A|B|C|D", "subject": "...", "title": "...", "thumb_text": "...", "goal": "...", "new_mechanic": "...", "gauge": "O2|ENERGY|AIR", "levels": [{"name": "...", "fact": "... [source]", "choice": {"A": "...", "B": "...", "C": "...", "correct": "B", "source": "..."}}], "twist": "...", "ending": "GAME OVER|YOU SURVIVED|WHAT REALLY HAPPENED", "validated_by_user": false}` ; `true` seulement après le choix de l'utilisateur.
-- `script.md` : une phrase par ligne, en-têtes `## Level N — titre` ; une carte-choix = une ligne seule `[CHOICE] A: … | B: … | C: …` (la bonne réponse reste dans `brief.json`, jamais dans la voix avant le silence de 2 s).
+- `script.md` : une phrase par ligne = un plan dit à voix haute ; en-têtes `## Chapter N — Level N: titre` (`make_shots.py` exige « Chapter »). Le choix est une phrase dite (« Choose. A, hold still. B, swim for the boat. C, face it. ») dont le plan est une carte `H({"type": "choice", ...})` ; la réponse vient à la ligne suivante, jamais dans la même phrase. Cartes néon par `$DT/scripts/neon_cards.py`.
 - `hud.json` : schéma en tête de `$DT/scripts/hud.py`. **Body Swap** : `"gauge": "ENERGY"` (ou ce que l'animal risque de perdre), l'O2 n'a pas de sens quand tu es l'animal.
 - **Scripts publiés** : chaque script final est copié en `published/<AAAA-MM-JJ>_<sujet>.txt` dans le dossier de la chaîne ; `originality.py script.md --ref published` vérifie qu'on ne se recopie pas.
 - Texte de miniature par format : A « 0:12 LEFT », B « 1 IN 40 », C « STILL ALIVE? », D « GAME OVER? » ou le score réel.

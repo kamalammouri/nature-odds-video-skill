@@ -39,7 +39,7 @@ def hud_html(keys, events, dur, gauge="O2"):
 #o2f {{ height: 100%; border-radius: 4px; }}
 #oddv, .odd {{ color: #f0f8ff; }}
 .ev {{ position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }}
-.ev p {{ margin: 0; font: 400 170px "League Gothic", sans-serif; letter-spacing: 6px; text-shadow: 0 0 30px currentColor, 0 6px 0 #000; }}
+.ev p {{ margin: 0; padding: 10px 48px; border-radius: 18px; background: rgba(0,0,0,.72); border: 3px solid currentColor; font: 400 150px "League Gothic", sans-serif; letter-spacing: 6px; text-shadow: 0 0 24px currentColor; }}
 </style>
 <div id="root" data-composition-id="hud" data-width="{W}" data-height="{H}">
 <div id="hudp" class="clip panel" data-start="0" data-duration="{dur:.3f}">
