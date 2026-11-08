@@ -1,6 +1,19 @@
-# Normes Depth Theory (mesurées le 8 novembre 2026, 7 vidéos, toutes celles de la chaîne)
+# Étude de marché : Depth Theory (mesurée le 8 novembre 2026, 7 vidéos, toutes celles de la chaîne)
 
-Source : @depththeoryofficial, 20,7 k abonnés, 7 vidéos du 26 oct. au 8 nov. 2026 (une tous les 2 à 3 jours). Données brutes dans `Desktop/Nouveau dossier (3)/depth-theory/` (`channel.json`, `analysis/`, `tx/`, `rea/`). Re-mesurer seulement les vidéos plus récentes.
+**Ce fichier n'est pas un modèle à suivre.** Il dit pourquoi la niche marche ; la forme d'Oxygen Odds est dans `identity.md`. Les titres, la miniature, les tournures et l'outro décrits ici sont **à eux** : `originality.py` les bloque.
+
+| Principe qui marche ici (on le garde) | Notre version Oxygen Odds |
+|---|---|
+| Le spectateur est mis en danger (« you ») | il **joue** : choix A/B/C, jauge d'O2, score |
+| Un animal connu + un record + une vraie rencontre | idem, mais chaque fait tranche un choix du jeu |
+| Échelles concrètes (bus, éléphants, ta main) | silhouette humaine étalon et « head to toe » |
+| Débit soutenu, presque sans pause, plans de 3,5 à 4 s | idem (norme de la niche, pas une signature) |
+| Pas de musique, effets sonores denses | bips d'ordinateur de plongée, sonar, détendeur |
+| Sources et crédits dans la description | idem + mention IA et « score de jeu » |
+
+À **ne jamais reprendre** : les gabarits de titres §2, la miniature §6 (gravure noire, plongeur à lampe, flèche rouge, « IT … YOU.. »), l'ouverture « Picture this », « What would you actually do? », « The real danger », l'outro, la palette bleu nuit vectorielle et les cartes à grille de §5.
+
+Source : @depththeoryofficial, 20,7 k abonnés, 7 vidéos du 26 oct. au 8 nov. 2026 (une tous les 2 à 3 jours). Données brutes dans `Desktop/Nouveau dossier (3)/depth-theory/` (`channel.json`, `analysis/`, `tx/` = transcriptions pour `originality.py --ref`, `rea/`). Ces données restent en local, jamais dans le dépôt (droits d'auteur).
 
 | Date | Titre | Durée | Vues | Plan médian | Mots/min |
 |---|---|---|---|---|---|
@@ -54,7 +67,7 @@ Format B (« every prehistoric ocean ») : un chapitre par ère, titre `Ère (N 
 Palette : bleu nuit `#0b1d2e`, sarcelle `#1f5f6b`, gris animal `#8a8f94`, rouge danger `#e21e24`, vert sonar `#3ddc84`, sable pour les ères anciennes. Mouvement : zooms et panoramiques lents, aucune transition tape-à-l'œil.
 
 ## 5 bis. Décomposition rea-video (7/7, sans VLM, confiance ≈ 0,6)
-Mélange stable : scènes animées 28 à 58 % (classées « rendu 3D » à cause des mouvements de caméra fluides ; à l'œil, du vecteur plat animé), cartes générées par code 22 à 67 %, images fixes en zoom/pan 8 à 28 %, plans douteux (« AI ») 3 à 15 % (surtout des vidéos d'archives NOAA/Pexels en 24 i/s), prise de vue réelle ≤ 2 %. Traduction pour notre pipeline : images Flow `depth-flat` animées en zoom/pan dans HyperFrames + cartes `html` + photos réelles créditées ; la vidéo d'archive libre de droits remplace les plans « AI ». Rapports : `depth-theory/rea/<id>/report.html`.
+Mélange stable : scènes animées 28 à 58 % (classées « rendu 3D » à cause des mouvements de caméra fluides ; à l'œil, du vecteur plat animé), cartes générées par code 22 à 67 %, images fixes en zoom/pan 8 à 28 %, plans douteux (« AI ») 3 à 15 % (surtout des vidéos d'archives NOAA/Pexels en 24 i/s), prise de vue réelle ≤ 2 %. Leçon technique (pas de style) : un rendu image + zoom/pan + cartes générées par code suffit dans cette niche ; notre pipeline HyperFrames le fait avec notre propre style (`identity.md` §5). Rapports : `depth-theory/rea/<id>/report.html`.
 
 ## 6. Miniature (7/7 identiques)
-Fond noir pur ; animal en **gravure noir et blanc (scratchboard)**, énorme, à droite ; **plongeur minuscule avec lampe** dont le faisceau éclaire l'animal ; texte en haut à gauche, capitales blanches très grasses condensées, **le dernier mot en rouge**, terminé par « .. » : « IT SEES YOU.. », « IT HEARS YOU.. », « IT HUNTS YOU.. », « WON'T HUNT YOU... », « YOU'RE NEXT.. », « Still King? » ; **flèche rouge courbe** du texte vers le plongeur ; parfois des ondes sonores (cercles) autour de la tête de l'animal. Aucune couleur hors noir, blanc et rouge. Fait par `scripts/thumb_depth.py` sur une image Flow (gabarit `thumbnail` du style `depth-flat`).
+Fond noir pur ; animal en **gravure noir et blanc (scratchboard)**, énorme, à droite ; **plongeur minuscule avec lampe** dont le faisceau éclaire l'animal ; texte en haut à gauche, capitales blanches très grasses condensées, **le dernier mot en rouge**, terminé par « .. » : « IT SEES YOU.. », « IT HEARS YOU.. », « IT HUNTS YOU.. », « WON'T HUNT YOU... », « YOU'RE NEXT.. », « Still King? » ; **flèche rouge courbe** du texte vers le plongeur ; parfois des ondes sonores (cercles) autour de la tête de l'animal. Aucune couleur hors noir, blanc et rouge. **Leur signature : ne pas reprendre** (notre miniature : `identity.md` §5).
