@@ -17,7 +17,8 @@ Chaque vidéo est **une partie** de 10 à 15 min en anglais (public US) : tu ent
 - `references/identity.md` — la bible : joueur et narrateur, formats, structure d'une partie, écriture, visuels, son, description, Shorts.
 - `references/agents.md` — ce qui change dans chaque brief d'agent, et le modèle de chaque agent.
 - `references/youtube-compliance.md` — la liste de contrôle des règles YouTube, avec ses sources.
-- `references/reference-depth-theory.md` — l'étude de marché (principes à garder, formes à ne jamais reprendre).
+- `references/reference-depth-theory.md` — l'étude de marché (principes à garder, formes à ne jamais reprendre)
+- `references/maven-route.md` — la voie B : tout le film animé par code avec Maven Animate (`MV=~/.claude/skills/maven-animate`, skill séparé, non inclus), réglé sur l'identité néon..
 - `scripts/hud.py` (le HUD de jeu dans HyperFrames), `scripts/neon_cards.py` (cartes néon), `scripts/mix_odds.py` (le son de la chaîne), `scripts/thumb_odds.py` (la miniature), `scripts/originality.py` (le contrôle anti-clone), `scripts/meta_digest.py` (le résumé des métadonnées d'une chaîne). Chaque script a un `--selftest`.
 - Démo complète de référence (8 novembre 2026, 64 s, tous les fichiers de travail) : `Desktop/Nouveau dossier (3)/oxygen-odds/demo-tiger/`.
 - Style d'image `nature-neon` dans `$AH/scripts/styles.json`.
@@ -37,6 +38,7 @@ Chaque vidéo est **une partie** de 10 à 15 min en anglais (public US) : tu ent
 5. **Voix** : `python $AH/scripts/tts.py shots.json --engine eleven --voice Brian --gap 0.3 --speed 0.9` (sans `--speed`, Brian sort à 190 mots/min, mesuré sur la démo du 8 novembre 2026 ; cible 160 à 172), test `--only 1,2,3` ; **Audio director** ; recaler les `t` de `hud.json` sur `timing.json` (`starts`).
 6. **Images** :
    - **Flow (interface refaite en novembre 2026)** : chaque projet passe par un agent ; `qbatch.mjs` ne trouve plus ses boutons, et l'envoi automatisé déclenche « activité inhabituelle » (anti-robot : ne jamais le contourner). Procédure qui marche : écrire tous les prompts dans `flow_prompts_a_coller.txt` ; **l'utilisateur** les colle dans Flow (projet réglé en 16:9, x1) ; puis `FLOW_TAB=last node $AH/scripts/flow/harvest.mjs flow/raw` télécharge ses images, `python $AH/scripts/flow/harvest_sheet.py flow/raw` fait la planche, on associe chaque H### à son plan par l'image, et on copie en `flow/<video>/F###.png`.
+   - **Voie B, sans Flow** : épisode marin, Flow bloqué ou Short → tout le film animé par code avec Maven Animate, suivre `references/maven-route.md` (il remplace les étapes 6 et 7 ; l'étape 8 reste avec `mix_odds.py`).
    - Cartes-choix, cartes-niveaux, records et écran de fin : `python $DT/scripts/neon_cards.py shots.json flow/<video>` (jamais Flow).
    - Archives réelles par `$AH/scripts/openverse.py`, légendées et créditées.
    - **Image QC** par planche (sur la démo, l'image des pores montrait un poisson tacheté et non un requin-tigre : c'est le défaut type à attraper).

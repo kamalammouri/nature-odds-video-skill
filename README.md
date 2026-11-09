@@ -34,6 +34,13 @@ repo's `scripts/styles.json`.
 - `scripts/originality.py` — clone guard: signature phrases, shared 6/10-word runs, title similarity; `--selftest`.
 - `scripts/meta_digest.py` — compact digest of a channel's yt-dlp `.info.json` files.
 
+## Optional: Maven Animate (route B, everything animated in code)
+
+`references/maven-route.md` explains how to render a whole episode in code with **Maven Animate**, by Maven
+(Instagram @maven.iqq, YouTube maveniqq), styled to this channel's neon identity. Maven Animate is **not included**:
+its licence does not allow redistribution, so get it from Maven's own link and install it as a separate skill
+(`~/.claude/skills/maven-animate`), keeping its `rights/` folder.
+
 ## Install
 
 ```bash
